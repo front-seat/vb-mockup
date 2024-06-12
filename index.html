@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Demo</title>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+	<div id="split">
+		<div id="top">
+			<div class="wrap">
+				<div class="initial">
+					<h1>Welcome to the Voter Bowl!</h1>
+					<p>Check your voter registration status to win a $5 gift card.</p>
+					<p>&nbsp;</p>
+				</div>
+				<div class="after hidden">
+					<h1>The Voter Bowl thanks you!</h1>
+					<p>Thanks for checking your registration status. We've sent you an email with a $5 gift card.</p>
+					<p>If you haven't done so already, be sure to register to vote today.</p>
+				</div>
+			</div>
+		</div>
+		<div id="bottom">
+			<div class="wrap">
+				<div class="initial">
+					<h1>Rock The Vote &mdash; Check Registration</h1>
+					<p>(This is in an iFrame!)</p>
+					<form class="formy">
+						<div>
+							<label for="name">Name:</label>
+							<input type="text" id="name" name="name">
+						</div>
+						<div>
+							<label for="email">Email:</label>
+							<input type="email" id="email" name="email">
+						</div>
+						<div>
+							<label for="dob">Date of Birth:</label>
+							<input type="date" id="dob" name="dob">
+						</div>
+						<div>
+							<label for="zip">Zip Code:</label>
+							<input type="text" id="zip" name="zip">
+						</div>
+						<p>(This is a demo only; you can click the "Check" button without entering data.)</p>
+						<button type="submit">Check Registration</button>
+					</form>
+				</div>
+				<div class="after hidden">
+					<h1>You may not be registered to vote.</h1>
+					<p>(Still an iFrame!)</p>
+					<p>Rock the Vote could not find your name on file. Please check with your secretary of state or <a
+							href="#">use
+							our registration form</a> below to get ready to vote today.</a></p>
+					<div class="formy">
+						<div>
+							<label for="name">Name:</label>
+							<input type="text" id="name" name="name">
+						</div>
+						<div>
+							<label for="email">Email:</label>
+							<input type="email" id="email" name="email">
+						</div>
+						<div>
+							<label for="dob">Date of Birth:</label>
+							<input type="date" id="dob" name="dob">
+						</div>
+						<div>
+							<label for="zip">Zip Code:</label>
+							<input type="text" id="zip" name="zip">
+						</div>
+						<div>
+							<label for="zip">Last 4 of SSN:</label>
+							<input type="text" id="ssn4" name="ssn4">
+						</div>
+						<div>
+							<label for="dl">Drivers Licence:</label>
+							<input type="text" id="dl" name="dl">
+						</div>
+						<button type="submit">Register To Vote</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<script>
+		const form = document.querySelector('form');
+		console.log(form);
+		form.onsubmit = (e) => {
+			e.preventDefault();
+			const initials = document.querySelectorAll('.initial');
+			const afters = document.querySelectorAll('.after');
+			initials.forEach((el) => el.classList.add('hidden'));
+			afters.forEach((el) => el.classList.remove('hidden'));
+		};
+	</script>
+
+</body>
+
+</html>
